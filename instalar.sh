@@ -102,7 +102,7 @@ fi
 CFG="$HOME/.gemini/antigravity/mcp_config.json"
 # Las preguntas se leen del teclado aunque el script llegue por una tubería (curl | bash).
 TTY=/dev/stdin
-[[ -t 0 ]] || { [[ -r /dev/tty ]] && TTY=/dev/tty; }
+[[ -t 0 ]] || { { : </dev/tty; } 2>/dev/null && TTY=/dev/tty; }
 echo
 r=""; read -r -p "¿Conectar Libreta con Antigravity ahora? [s/N] " r <"$TTY" || true
 if [[ "${r,,}" == s* ]]; then
