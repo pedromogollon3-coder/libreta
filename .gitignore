@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+datos/
+*.db
+*.db-wal
+*.db-shm
+*.tar.gz
